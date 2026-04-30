@@ -1,0 +1,12 @@
+{
+  "name": "customer-churn-intelligence",
+  "version": "1.0.0",
+  "description": "Customer Churn Prediction and Segmentation System",
+  "scripts": {
+    "dev": "npm run dev --prefix frontend",
+    "backend": "cd backend && .\\venv\\Scripts\\python.exe -m uvicorn app:app --host 0.0.0.0 --port 8000 --reload",
+    "install:all": "npm install --prefix frontend && cd backend && .\\venv\\Scripts\\python.exe -m pip install -r requirements.txt"
+  },
+  "author": "",
+  "license": "ISC"
+}

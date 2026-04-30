@@ -1,0 +1,31 @@
+# Dependency directories
+node_modules/
+frontend/node_modules/
+backend/venv/
+backend/__pycache__/
+__pycache__/
+
+# Build outputs
+frontend/dist/
+dist/
+
+# Environment variables
+.env
+backend/.env
+
+# Python artifacts
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# IDEs
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# System files
+.DS_Store
+Thumbs.db

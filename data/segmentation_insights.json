@@ -1,0 +1,160 @@
+{
+    "geography": [
+        {
+            "Geography": "France",
+            "ChurnRate": 0.16154766653370561,
+            "TotalCustomers": 5014
+        },
+        {
+            "Geography": "Germany",
+            "ChurnRate": 0.32443204463929853,
+            "TotalCustomers": 2509
+        },
+        {
+            "Geography": "Spain",
+            "ChurnRate": 0.1667339523617279,
+            "TotalCustomers": 2477
+        }
+    ],
+    "age": [
+        {
+            "AgeGroup": "18-30",
+            "ChurnRate": 0.07556368068251067,
+            "TotalCustomers": 1641
+        },
+        {
+            "AgeGroup": "31-40",
+            "ChurnRate": 0.10883571099861943,
+            "TotalCustomers": 4346
+        },
+        {
+            "AgeGroup": "41-50",
+            "ChurnRate": 0.30786860198624905,
+            "TotalCustomers": 2618
+        },
+        {
+            "AgeGroup": "51-60",
+            "ChurnRate": 0.5604142692750288,
+            "TotalCustomers": 869
+        },
+        {
+            "AgeGroup": "60+",
+            "ChurnRate": 0.279467680608365,
+            "TotalCustomers": 526
+        }
+    ],
+    "balance": [
+        {
+            "BalanceSegment": "0-10k",
+            "ChurnRate": 0.1384742951907131,
+            "TotalCustomers": 3618
+        },
+        {
+            "BalanceSegment": "10k-50k",
+            "ChurnRate": 0.33783783783783783,
+            "TotalCustomers": 74
+        },
+        {
+            "BalanceSegment": "50k-100k",
+            "ChurnRate": 0.1988071570576541,
+            "TotalCustomers": 1509
+        },
+        {
+            "BalanceSegment": "100k-150k",
+            "ChurnRate": 0.2577023498694517,
+            "TotalCustomers": 3830
+        },
+        {
+            "BalanceSegment": "150k+",
+            "ChurnRate": 0.23116615067079463,
+            "TotalCustomers": 969
+        }
+    ],
+    "credit_score": [
+        {
+            "CreditScoreBand": "Poor",
+            "ChurnRate": 0.22147931466778104,
+            "TotalCustomers": 2393
+        },
+        {
+            "CreditScoreBand": "Fair",
+            "ChurnRate": 0.20388059701492536,
+            "TotalCustomers": 3350
+        },
+        {
+            "CreditScoreBand": "Good",
+            "ChurnRate": 0.18815185648727575,
+            "TotalCustomers": 2397
+        },
+        {
+            "CreditScoreBand": "Very Good",
+            "ChurnRate": 0.20246913580246914,
+            "TotalCustomers": 1215
+        },
+        {
+            "CreditScoreBand": "Exceptional",
+            "ChurnRate": 0.19689922480620156,
+            "TotalCustomers": 645
+        }
+    ],
+    "tenure": [
+        {
+            "Tenure": 0,
+            "ChurnRate": 0.23002421307506055,
+            "TotalCustomers": 413
+        },
+        {
+            "Tenure": 1,
+            "ChurnRate": 0.22415458937198068,
+            "TotalCustomers": 1035
+        },
+        {
+            "Tenure": 2,
+            "ChurnRate": 0.191793893129771,
+            "TotalCustomers": 1048
+        },
+        {
+            "Tenure": 3,
+            "ChurnRate": 0.21110009910802774,
+            "TotalCustomers": 1009
+        },
+        {
+            "Tenure": 4,
+            "ChurnRate": 0.20525783619817997,
+            "TotalCustomers": 989
+        },
+        {
+            "Tenure": 5,
+            "ChurnRate": 0.20652173913043478,
+            "TotalCustomers": 1012
+        },
+        {
+            "Tenure": 6,
+            "ChurnRate": 0.20268872802481902,
+            "TotalCustomers": 967
+        },
+        {
+            "Tenure": 7,
+            "ChurnRate": 0.17217898832684825,
+            "TotalCustomers": 1028
+        },
+        {
+            "Tenure": 8,
+            "ChurnRate": 0.19219512195121952,
+            "TotalCustomers": 1025
+        },
+        {
+            "Tenure": 9,
+            "ChurnRate": 0.21646341463414634,
+            "TotalCustomers": 984
+        },
+        {
+            "Tenure": 10,
+            "ChurnRate": 0.20612244897959184,
+            "TotalCustomers": 490
+        }
+    ],
+    "total_customers": 10000,
+    "overall_churn_rate": 0.2037,
+    "active_users": 5151
+}
