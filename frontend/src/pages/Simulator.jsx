@@ -144,7 +144,7 @@ export default function Simulator() {
         {/* ── Controls ── */}
         <div className="glass-panel p-6 space-y-6">
           <div className="flex items-center gap-2 pb-4 border-b border-gray-700/50">
-            <div className="p-1.5 bg-indigo-500/15 rounded-lg border border-indigo-500/20">
+            <div className="p-1.5 bg-white/10 rounded-lg border border-white/20">
               <Sliders className="w-4 h-4 text-indigo-400" />
             </div>
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider">Adjust Variables</h3>
@@ -162,7 +162,7 @@ export default function Simulator() {
                   name={name}
                   value={baseData[name]}
                   onChange={handleGeoGender}
-                  className="w-full bg-gray-900/60 border border-gray-700/60 text-white rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500/50 outline-none"
+                  className="w-full bg-gray-900/60 border border-gray-700/60 text-white rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-white/50 outline-none"
                 >
                   {opts.map((o) => <option key={o}>{o}</option>)}
                 </select>
@@ -238,7 +238,7 @@ export default function Simulator() {
                     onClick={() => setSimVar(key)}
                     className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
                       simVar === key
-                        ? 'bg-indigo-500/20 text-indigo-300 border-indigo-500/40'
+                        ? 'bg-white/10 text-white border-white/20'
                         : 'bg-gray-800/60 text-gray-500 border-gray-700 hover:text-gray-300'
                     }`}
                   >

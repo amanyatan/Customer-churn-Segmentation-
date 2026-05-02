@@ -103,7 +103,7 @@ export default function Prediction() {
             {fieldGroups.map(({ title, icon: Icon, fields }) => (
               <div key={title} className="glass-panel p-6">
                 <div className="flex items-center gap-2 mb-5 pb-4 border-b border-gray-700/50">
-                  <div className="p-1.5 bg-blue-500/15 rounded-lg border border-blue-500/20">
+                  <div className="p-1.5 bg-white/10 rounded-lg border border-white/20">
                     <Icon className="w-4 h-4 text-blue-400" />
                   </div>
                   <h3 className="text-sm font-semibold text-gray-200 uppercase tracking-wider">{title}</h3>
@@ -117,7 +117,7 @@ export default function Prediction() {
                           name={name}
                           value={formData[name]}
                           onChange={handleChange}
-                          className="w-full bg-gray-900/60 border border-gray-700/60 text-white rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 outline-none transition-all"
+                          className="w-full bg-gray-900/60 border border-gray-700/60 text-white rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-white/50 focus:border-white/50 outline-none transition-all"
                         >
                           {options.map((opt, i) => (
                             <option key={opt} value={opt}>{labels ? labels[i] : opt}</option>
@@ -130,7 +130,7 @@ export default function Prediction() {
                           value={formData[name]}
                           onChange={handleChange}
                           {...rest}
-                          className="w-full bg-gray-900/60 border border-gray-700/60 text-white rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 outline-none transition-all"
+                          className="w-full bg-gray-900/60 border border-gray-700/60 text-white rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-white/50 focus:border-white/50 outline-none transition-all"
                         />
                       )}
                     </div>
@@ -151,7 +151,7 @@ export default function Prediction() {
               <button
                 type="submit"
                 disabled={loading}
-                className="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 disabled:opacity-60 text-white font-semibold py-3 px-6 rounded-xl shadow-lg transition-all hover:-translate-y-0.5 flex justify-center items-center gap-2 text-sm"
+                className="flex-1 bg-white hover:bg-gray-200 disabled:opacity-60 text-black font-semibold py-3 px-6 rounded-xl shadow-lg transition-all hover:-translate-y-0.5 flex justify-center items-center gap-2 text-sm"
               >
                 {loading
                   ? <><div className="w-4 h-4 border-t-2 border-white rounded-full animate-spin" /> Analysing…</>

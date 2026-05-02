@@ -9,8 +9,17 @@ from pydantic import BaseModel, Field
 
 # ─── Paths ────────────────────────────────────────────────────────────────────
 BASE_DIR       = os.path.dirname(os.path.abspath(__file__))
-MODELS_DIR     = os.path.join(BASE_DIR, '..', 'models')
-DATA_OUT_DIR   = os.path.join(BASE_DIR, '..', 'data')
+
+# Check if we are running inside Docker (WORKDIR /app) or locally
+if os.path.exists(os.path.join(BASE_DIR, 'models')):
+    # Docker path: /app/models
+    MODELS_DIR = os.path.join(BASE_DIR, 'models')
+    DATA_OUT_DIR = os.path.join(BASE_DIR, 'data')
+else:
+    # Local path: ../models
+    MODELS_DIR = os.path.join(BASE_DIR, '..', 'models')
+    DATA_OUT_DIR = os.path.join(BASE_DIR, '..', 'data')
+
 MODEL_PATH      = os.path.join(MODELS_DIR, 'xgboost_model.pkl')
 PREPROCESSOR_PATH = os.path.join(MODELS_DIR, 'preprocessor.pkl')
 SEGMENTS_PATH  = os.path.join(DATA_OUT_DIR, 'segmentation_insights.json')
@@ -64,16 +73,16 @@ app.add_middleware(
 
 # ─── Schema ───────────────────────────────────────────────────────────────────
 class CustomerData(BaseModel):
-    CreditScore:      int   = Field(..., example=619)
-    Geography:        str   = Field(..., example="France")
-    Gender:           str   = Field(..., example="Female")
-    Age:              int   = Field(..., example=42)
-    Tenure:           int   = Field(..., example=2)
-    Balance:          float = Field(..., example=0.0)
-    NumOfProducts:    int   = Field(..., example=1)
-    HasCrCard:        int   = Field(..., example=1)
-    IsActiveMember:   int   = Field(..., example=1)
-    EstimatedSalary:  float = Field(..., example=101348.88)
+    CreditScore:      int   = Field(..., json_schema_extra={"example": 619})
+    Geography:        str   = Field(..., json_schema_extra={"example": "France"})
+    Gender:           str   = Field(..., json_schema_extra={"example": "Female"})
+    Age:              int   = Field(..., json_schema_extra={"example": 42})
+    Tenure:           int   = Field(..., json_schema_extra={"example": 2})
+    Balance:          float = Field(..., json_schema_extra={"example": 0.0})
+    NumOfProducts:    int   = Field(..., json_schema_extra={"example": 1})
+    HasCrCard:        int   = Field(..., json_schema_extra={"example": 1})
+    IsActiveMember:   int   = Field(..., json_schema_extra={"example": 1})
+    EstimatedSalary:  float = Field(..., json_schema_extra={"example": 101348.88})
 
 
 # ─── Routes ───────────────────────────────────────────────────────────────────

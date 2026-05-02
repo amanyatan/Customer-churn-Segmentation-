@@ -78,7 +78,7 @@ export default function Dashboard() {
         </div>
         <button
           onClick={fetchData}
-          className="flex items-center gap-2 px-5 py-2.5 bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/30 rounded-xl text-blue-400 text-sm font-medium transition-all"
+          className="flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl text-white text-sm font-medium transition-all"
         >
           <RefreshCw className="w-4 h-4" /> Retry
         </button>

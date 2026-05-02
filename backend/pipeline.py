@@ -13,9 +13,16 @@ from xgboost import XGBClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
 
 # Paths
-DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'European_Bank.csv')
-MODELS_DIR = os.path.join(os.path.dirname(__file__), '..', 'models')
-DATA_OUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'data')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+if os.path.exists(os.path.join(BASE_DIR, 'models')):
+    MODELS_DIR = os.path.join(BASE_DIR, 'models')
+    DATA_OUT_DIR = os.path.join(BASE_DIR, 'data')
+else:
+    MODELS_DIR = os.path.join(BASE_DIR, '..', 'models')
+    DATA_OUT_DIR = os.path.join(BASE_DIR, '..', 'data')
+
+DATA_PATH = os.path.join(DATA_OUT_DIR, 'European_Bank.csv')
 
 def load_and_preprocess_data(filepath):
     print("Loading dataset...")
