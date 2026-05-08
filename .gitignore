@@ -4,13 +4,17 @@ frontend/node_modules/
 backend/venv/
 backend/__pycache__/
 __pycache__/
+api/__pycache__/
 
 # Build outputs
 frontend/dist/
 dist/
+.vercel/
 
 # Environment variables
 .env
+.env.local
+.env.production
 backend/.env
 
 # Python artifacts
