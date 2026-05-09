@@ -1,0 +1,56 @@
+{
+    "num_features": [
+        "CreditScore",
+        "Age",
+        "Tenure",
+        "Balance",
+        "NumOfProducts",
+        "HasCrCard",
+        "IsActiveMember",
+        "EstimatedSalary",
+        "BalanceSalaryRatio",
+        "AgeTenureInteraction",
+        "ProductUsageDensity"
+    ],
+    "cat_features": [
+        "Geography",
+        "Gender"
+    ],
+    "means": [
+        650.7525,
+        38.946625,
+        5.016625,
+        76381.20749875,
+        1.5295,
+        0.70875,
+        0.514875,
+        99730.81158125,
+        4.221890943053793,
+        195.2855,
+        0.3658498106060606
+    ],
+    "scales": [
+        96.59039415878786,
+        10.526218509482643,
+        2.8966098476279125,
+        62298.159596894104,
+        0.581704177396037,
+        0.45433846139194506,
+        0.49977868539484555,
+        57331.5329828387,
+        120.87842311313197,
+        128.8851949983007,
+        0.334593449249692
+    ],
+    "categories": [
+        [
+            "France",
+            "Germany",
+            "Spain"
+        ],
+        [
+            "Female",
+            "Male"
+        ]
+    ]
+}
