@@ -14,15 +14,17 @@ BASE_DIR       = os.path.dirname(os.path.abspath(__file__))
 if os.path.exists(os.path.join(BASE_DIR, 'models')):
     # Docker path: /app/models
     MODELS_DIR = os.path.join(BASE_DIR, 'models')
+    API_DIR = os.path.join(BASE_DIR, 'api')
     DATA_OUT_DIR = os.path.join(BASE_DIR, 'data')
 else:
     # Local path: ../models
     MODELS_DIR = os.path.join(BASE_DIR, '..', 'models')
+    API_DIR = os.path.join(BASE_DIR, '..', 'api')
     DATA_OUT_DIR = os.path.join(BASE_DIR, '..', 'data')
 
 MODEL_PATH      = os.path.join(MODELS_DIR, 'xgboost_model.pkl')
 PREPROCESSOR_PATH = os.path.join(MODELS_DIR, 'preprocessor.pkl')
-SEGMENTS_PATH  = os.path.join(DATA_OUT_DIR, 'segmentation_insights.json')
+SEGMENTS_PATH  = os.path.join(API_DIR, 'segmentation_insights.json')
 DATASET_PATH   = os.path.join(DATA_OUT_DIR, 'European_Bank.csv')
 
 # ─── Global state ─────────────────────────────────────────────────────────────
