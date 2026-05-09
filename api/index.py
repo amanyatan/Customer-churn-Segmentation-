@@ -15,8 +15,7 @@ from . import xgboost_pure
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(BASE_DIR)  # project root
 
-DATA_OUT_DIR = os.path.join(ROOT_DIR, 'data')
-SEGMENTS_PATH = os.path.join(DATA_OUT_DIR, 'segmentation_insights.json')
+SEGMENTS_PATH = os.path.join(BASE_DIR, 'segmentation_insights.json')
 CONFIG_PATH = os.path.join(BASE_DIR, 'preprocessor_config.json')
 
 # ─── Global state (loaded once per cold start) ───────────────────────────────

@@ -17,12 +17,14 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 if os.path.exists(os.path.join(BASE_DIR, 'models')):
     MODELS_DIR = os.path.join(BASE_DIR, 'models')
-    DATA_OUT_DIR = os.path.join(BASE_DIR, 'data')
+    DATA_DIR = os.path.join(BASE_DIR, 'data')
+    JSON_OUT_DIR = os.path.join(BASE_DIR, 'api')
 else:
     MODELS_DIR = os.path.join(BASE_DIR, '..', 'models')
-    DATA_OUT_DIR = os.path.join(BASE_DIR, '..', 'data')
+    DATA_DIR = os.path.join(BASE_DIR, '..', 'data')
+    JSON_OUT_DIR = os.path.join(BASE_DIR, '..', 'api')
 
-DATA_PATH = os.path.join(DATA_OUT_DIR, 'European_Bank.csv')
+DATA_PATH = os.path.join(DATA_DIR, 'European_Bank.csv')
 
 def load_and_preprocess_data(filepath):
     print("Loading dataset...")
@@ -93,8 +95,8 @@ def generate_segmentation_analytics(df):
     }
     
     # Save to JSON
-    os.makedirs(DATA_OUT_DIR, exist_ok=True)
-    with open(os.path.join(DATA_OUT_DIR, 'segmentation_insights.json'), 'w') as f:
+    os.makedirs(JSON_OUT_DIR, exist_ok=True)
+    with open(os.path.join(JSON_OUT_DIR, 'segmentation_insights.json'), 'w') as f:
         json.dump(segmentation_data, f, indent=4)
         
     # Drop created categorical columns for modeling
