@@ -1,7 +1,0 @@
-# Vercel Ignore File
-backend/
-models/
-venv/
-.venv/
-export_pure_python.py
-data/*.csv

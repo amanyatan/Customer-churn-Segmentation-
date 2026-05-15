@@ -1,0 +1,24 @@
+# Ignore frontend – Railway only deploys the backend service
+frontend/
+frontend/node_modules/
+
+# Ignore dev/data artefacts not needed in the image
+data/
+backend/venv/
+backend/__pycache__/
+api/__pycache__/
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter / notebooks
+*.ipynb
+.ipynb_checkpoints/
+
+# Local env files
+.env
+.env.*
+
+# Git
+.git/
+.gitignore
