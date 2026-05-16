@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: customer-churn-api
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: .
+    plan: free
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_ENV
+        value: production
