@@ -129,7 +129,7 @@ def health_check():
     }
 
 
-@app.post("/predict", tags=["Prediction"])
+@app.post("/api/predict", tags=["Prediction"])
 def predict_churn(customer: CustomerData):
     """Return churn probability, binary prediction, and risk level."""
     if _state["model"] is None or _state["preprocessor"] is None:
@@ -168,7 +168,7 @@ def predict_churn(customer: CustomerData):
     }
 
 
-@app.get("/segments", tags=["Analytics"])
+@app.get("/api/segments", tags=["Analytics"])
 def get_segments():
     """Return full segmentation analytics dataset."""
     if not _state["segmentation_data"]:
@@ -179,7 +179,7 @@ def get_segments():
     return _state["segmentation_data"]
 
 
-@app.get("/metrics", tags=["Analytics"])
+@app.get("/api/metrics", tags=["Analytics"])
 def get_metrics():
     """Return high-level KPIs: churn rate, total customers, active users."""
     sd = _state["segmentation_data"]
