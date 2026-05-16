@@ -6,7 +6,8 @@ import pandas as pd
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 # ─── Logging ──────────────────────────────────────────────────────────────────
@@ -24,10 +25,12 @@ if os.path.exists(os.path.join(BASE_DIR, "models")):
     MODELS_DIR   = os.path.join(BASE_DIR, "models")
     API_DIR      = os.path.join(BASE_DIR, "api")
     DATA_OUT_DIR = os.path.join(BASE_DIR, "data")
+    FRONTEND_DIR = os.path.join(BASE_DIR, "frontend", "dist")
 else:
     MODELS_DIR   = os.path.join(BASE_DIR, "..", "models")
     API_DIR      = os.path.join(BASE_DIR, "..", "api")
     DATA_OUT_DIR = os.path.join(BASE_DIR, "..", "data")
+    FRONTEND_DIR = os.path.join(BASE_DIR, "..", "frontend", "dist")
 
 MODEL_PATH        = os.path.join(MODELS_DIR, "xgboost_model.pkl")
 PREPROCESSOR_PATH = os.path.join(MODELS_DIR, "preprocessor.pkl")
@@ -190,6 +193,25 @@ def get_metrics():
         "total_customers":    sd.get("total_customers", 0),
         "active_users":       sd.get("active_users", 0),
     }
+
+
+# ─── Serve Frontend ───────────────────────────────────────────────────────────
+if os.path.isdir(FRONTEND_DIR):
+    app.mount("/assets", StaticFiles(directory=os.path.join(FRONTEND_DIR, "assets")), name="assets")
+
+    # Catch-all route to serve index.html for any other path (React Router)
+    @app.get("/{full_path:path}", include_in_schema=False)
+    async def serve_frontend(full_path: str):
+        # Serve specific root files if they exist
+        potential_file = os.path.join(FRONTEND_DIR, full_path)
+        if full_path and os.path.isfile(potential_file):
+            return FileResponse(potential_file)
+        
+        # Otherwise fallback to index.html for client-side routing
+        index_file = os.path.join(FRONTEND_DIR, "index.html")
+        if os.path.isfile(index_file):
+            return FileResponse(index_file)
+        return JSONResponse(status_code=404, content={"detail": "Frontend not built"})
 
 
 # ─── Entry point ──────────────────────────────────────────────────────────────
